@@ -1,0 +1,21 @@
+*{
+    box-sizing:border-box;
+}
+
+h2{
+    margin-bottom:2em;
+}
+
+h2, a, #correctAnswers{
+    display:block;
+    text-align: center;
+}
+
+a{
+    margin-bottom: 2em;
+    text-decoration: none;
+}
+
+.practice{
+    padding:1rem;
+}
