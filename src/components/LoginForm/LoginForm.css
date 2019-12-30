@@ -1,0 +1,35 @@
+.LoginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.login-form-input {
+  min-width: 80wv;
+  border: 2px black solid;
+  font-size: 1.2rem;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  background-color: #EAEAEA;
+}
+
+.login-form-label {
+  float: left;
+  margin-left: 12%;
+  font-size: 1.2rem;
+  margin-top: 3%;
+}
+
+@media only screen and (min-width: 1024px) {
+  .login-form-input {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    font-size: 2rem;
+    width: 50vw;
+  }
+  .login-form-label {
+    margin-top: 1%;
+    font-size: 1.5rem;
+  }
+}

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import RegistrationForm from '../../components/RegistrationForm/RegistrationForm'
+import './RegistrationRoute.css'
 
 class RegistrationRoute extends Component {
   static defaultProps = {
@@ -16,10 +17,10 @@ class RegistrationRoute extends Component {
   render() {
     return (
       <section>
-        <p>
-          Practice learning a language with the spaced reptition revision technique.
+        <p className='registration-copy'>
+          Practice learning a language with the spaced repetition revision technique.
         </p>
-        <h2>Sign up</h2>
+        <h2 className='registration-title'>Sign up</h2>
         <RegistrationForm
           onRegistrationSuccess={this.handleRegistrationSuccess}
         />

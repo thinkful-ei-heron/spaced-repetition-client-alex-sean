@@ -41,16 +41,20 @@ class RegistrationForm extends Component {
     const { error } = this.state
     return (
       <form
+        className='registration-form'
         onSubmit={this.handleSubmit}
       >
-        <div role='alert'>
+        <div role='alert' id='registration-error-display'>
           {error && <p>{error}</p>}
         </div>
         <div>
-          <Label htmlFor='registration-name-input'>
+          <Label 
+          className='registration-form-label'
+          htmlFor='registration-name-input'>
             Enter your name<Required />
           </Label>
           <Input
+            className='registration-form-input'
             ref={this.firstInput}
             id='registration-name-input'
             name='name'
@@ -58,32 +62,40 @@ class RegistrationForm extends Component {
           />
         </div>
         <div>
-          <Label htmlFor='registration-username-input'>
+          <Label 
+          className='registration-form-label'
+          htmlFor='registration-username-input'>
             Choose a username<Required />
           </Label>
           <Input
+            className='registration-form-input'
             id='registration-username-input'
             name='username'
             required
           />
         </div>
         <div>
-          <Label htmlFor='registration-password-input'>
+          <Label 
+          className='registration-form-label'
+          htmlFor='registration-password-input'>
             Choose a password<Required />
           </Label>
           <Input
+            className='registration-form-input'
             id='registration-password-input'
             name='password'
             type='password'
             required
           />
         </div>
-        <footer>
+        <footer className='registration-footer'>
           <Button type='submit'>
             Sign up
           </Button>
           {' '}
-          <Link to='/login'>Already have an account?</Link>
+          <Link 
+          id='registration-to-login'
+          to='/login'>Already have an account?</Link>
         </footer>
       </form>
     )

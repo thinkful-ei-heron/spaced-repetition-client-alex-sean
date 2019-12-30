@@ -13,12 +13,13 @@ class Header extends Component {
 
   renderLogoutLink() {
     return (
-      <div>
-        <span>
+      <div className='logged-in-header'>
+        <span id='header-user-name'>
           {this.context.user.name}
         </span>
-        <nav>
+        <nav className='header-nav'>
           <Link
+            className='header-nav-link'
             onClick={this.handleLogoutClick}
             to='/login'>
             Logout
@@ -30,19 +31,23 @@ class Header extends Component {
 
   renderLoginLink() {
     return (
-      <nav>
-        <Link to='/login'>Login</Link>
+      <nav className='header-nav'>
+        <Link 
+        className='header-nav-link'
+        to='/login'>Login</Link>
         {' '}
-        <Link to='/register'>Sign up</Link>
+        <Link 
+        className='header-nav-link'
+        to='/register'>Sign up</Link>
       </nav>
     )
   }
 
   render() {
     return (
-      <header>
-        <h1>
-          <Link to='/'>
+      <header className='nav-header'>
+        <h1 id='app-title'>
+          <Link id='header-link' to='/'>
             Spaced repetition
           </Link>
         </h1>

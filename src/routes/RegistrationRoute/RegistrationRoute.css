@@ -1,0 +1,21 @@
+.registration-copy {
+  justify-content: left;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.registration-title {
+  text-align: center;
+  font-size: 2rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  .registration-title {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+
+  .registration-copy {
+    font-size: 2rem;
+  }
+}

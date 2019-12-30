@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+@import url("https://fonts.googleapis.com/css?family=Lato|Nanum+Gothic&display=swap");
 
 * {
   box-sizing: border-box;
@@ -7,9 +7,10 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Ubuntu", sans-serif;
+  font-family: "Nanum Gothic", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #87C1FF;
 }
 
 :root {

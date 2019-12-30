@@ -1,0 +1,72 @@
+#registration-error-display {
+  color: red;
+  font-weight: bolder;
+}
+
+#registration-to-login {
+  margin-top: 5%;
+  text-decoration: none;
+  color: #EAEAEA;
+}
+
+#registration-to-login:visited {
+  color: #EAEAEA;
+}
+
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.registration-form-input {
+  min-width: 80vw;
+  border: 2px black solid;
+  font-size: 1.2rem;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  background-color: #EAEAEA;
+}
+
+.registration-form-label {
+  float: left;
+  margin-left: 10%;
+  font-size: 1.2rem;
+  margin-top: 3%;
+}
+
+/* extend footer to bottom of view */
+
+.registration-footer {
+  margin-top: 10%;
+  color: #EAEAEA;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  background-color: #545E75;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  padding-bottom: 15%;
+}
+
+@media only screen and (min-width: 1024px) {
+  .registration-footer {
+    margin-top: 0;
+  }
+  #registration-to-login {
+    margin-top: 2%;
+  }
+  .registration-form-input {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    font-size: 2rem;
+  }
+  .registration-form-label {
+    margin-top: 1%;
+    font-size: 1.5rem;
+  }
+}

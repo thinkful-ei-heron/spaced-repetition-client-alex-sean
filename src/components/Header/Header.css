@@ -1,0 +1,66 @@
+.nav-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-bottom: 5%;
+}
+
+#app-title {
+  text-align: center;
+  font-size: 2rem;
+  background-color: #545E75;
+  padding-top: 10%;
+  padding-bottom: 10%;
+  margin-top: 0;
+}
+
+#header-link {
+  
+  color: #EAEAEA;
+  text-decoration: none;
+}
+
+#header-link:visited {
+  color: #EAEAEA;
+}
+
+.header-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: black;
+}
+
+.header-nav-link {
+  text-decoration: none;
+  font-size: 1.3rem;
+}
+
+.header-nav-link:visited {
+  color: black;
+}
+
+.logged-in-header {
+  font-size: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-around;
+}
+
+#header-user-name {
+  font-size: 1.5rem;
+  margin-bottom: 3%;
+}
+
+@media only screen and (min-width: 1024px) {
+  #app-title {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    font-size: 4rem;
+  }
+  .header-nav-link {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+}
