@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import LangApiService from '../../services/lang-api-service'
 import './Dashboard.css'
-//import { map } from 'cypress/types/bluebird'
 
 class DashboardRoute extends Component {
 
@@ -14,8 +13,12 @@ class DashboardRoute extends Component {
   
   componentDidMount(){
     LangApiService.getLanguageAndWordsProgress(1)
-        .then(res => 
-          this.setState({dbResponse:res}))
+        .then(res => {
+          if(res === undefined) {
+            this.props.history.push('/login')
+          } else this.setState({dbResponse:res})
+        })
+          
   }
   
   getLanguage=()=>{
