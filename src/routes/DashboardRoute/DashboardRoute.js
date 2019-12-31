@@ -12,7 +12,7 @@ class DashboardRoute extends Component {
  };
   
   componentDidMount(){
-    LangApiService.getLanguageAndWordsProgress(1)
+    LangApiService.getLanguageAndWordsProgress()
         .then(res => {
           if(res === undefined) {
             this.props.history.push('/login')
