@@ -14,7 +14,8 @@ class LearningRoute extends Component {
       wordIncorrectCount: null,
       guess: '',
       answerResponse: null,
-      submitted: false
+      submitted: false,
+      submittedAnswer: null
     }
    };
 
@@ -44,7 +45,8 @@ class LearningRoute extends Component {
       answerResponse: res,
       submitted: true,
       guess: '',
-      totalScore: res.totalScore
+      totalScore: res.totalScore,
+      submittedAnswer: guess
     }))
   }
 
@@ -55,7 +57,7 @@ class LearningRoute extends Component {
         {this.state.answerResponse && !this.state.answerResponse.isCorrect ?
           <>
             <h2>Good try, but not quite right :(</h2>
-            <p id='DisplayFeedback'>The correct translation for {this.state.nextWord} is {this.state.answerResponse.answer}</p>
+            <p id='DisplayFeedback'>The correct translation for {this.state.nextWord} is {this.state.answerResponse.answer} and you chose {this.state.submittedAnswer}!</p>
             <button>Try another word!</button>
           </>
           : <></>
@@ -63,17 +65,24 @@ class LearningRoute extends Component {
         <h2>Translate the word:</h2>
         <span>{!this.state.nextWord ? '' : this.state.nextWord}</span>
         <p className='DisplayScore'>Your total score is: {!this.state.totalScore ? 0 : this.state.totalScore}</p>
-        <form onSubmit={e => {
-          e.preventDefault()
-          this.handleSubmit()}}>
-          <label htmlFor='learn-guess-input'>What's the translation for this word?</label>
-          <input type='text' 
-                  required='required' 
-                  id='learn-guess-input' 
-                  value={this.state.guess}
-                  onChange={this.handleInput}/>
-          <button type='submit'>Submit your answer</button>
-        </form>
+        {
+          !this.state.submitted ?
+          <>
+            <form onSubmit={e => {
+              e.preventDefault()
+              this.handleSubmit()}}>
+              <label htmlFor='learn-guess-input'>What's the translation for this word?</label>
+              <input type='text' 
+                      required='required' 
+                      id='learn-guess-input' 
+                      value={this.state.guess}
+                      onChange={this.handleInput}/>
+              <button type='submit'>Submit your answer</button>
+            </form>
+          </> :
+          <></>
+        }
+        
         <p>You have answered this word correctly 
           {!this.state.wordCorrectCount ? ' '+0+' ' : ' '+this.state.wordCorrectCount+' '}
           times.
