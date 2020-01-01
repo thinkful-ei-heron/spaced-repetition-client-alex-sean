@@ -3,7 +3,6 @@ import TokenService from './token-service'
 
 const LangApiService = {
 
-
     getLanguageAndWordsProgress(){
         return fetch(`${config.API_ENDPOINT}/language`, {
             headers: {
@@ -35,16 +34,24 @@ const LangApiService = {
             return res.json()}
         })
     },
-    getWordsToLearn(){
-
-    },
-    getResponses(){
-
-    },
-    getTotalScore(){
-
+    handleSubmitGuess(guess){
+      console.log('submitting guess: '+guess)
+      return fetch(`${config.API_ENDPOINT}/language/guess`, {
+        method: 'POST',
+        headers: { 'authorization':`bearer ${TokenService.getAuthToken()}`,
+                  'content-type': 'application/json' },
+        body: JSON.stringify({ guess })
+      })
+      .then(res => {
+        if(!res.ok){
+          return res.json().then(e => {
+            Promise.reject(e)
+          })
+        } else {
+          return res.json()
+        }
+      })
     }
-
 }
 
 export default LangApiService

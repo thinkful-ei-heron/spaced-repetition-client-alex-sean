@@ -11,7 +11,10 @@ class LearningRoute extends Component {
       nextWord: null,
       totalScore: null,
       wordCorrectCount: null,
-      wordIncorrectCount: null
+      wordIncorrectCount: null,
+      guess: '',
+      answerResponse: null,
+      submitted: false
     }
    };
 
@@ -25,18 +28,50 @@ class LearningRoute extends Component {
           wordIncorrectCount: res.wordIncorrectCount
         })
       })
+      
+  }
+
+  handleInput = (e) => {
+    this.setState({
+      guess: e.target.value
+    })
+  }
+
+  handleSubmit = () => {
+    let guess = this.state.guess.toLocaleLowerCase()
+    LangApiService.handleSubmitGuess(guess)
+    .then(res => this.setState({
+      answerResponse: res,
+      submitted: true,
+      guess: '',
+      totalScore: res.totalScore
+    }))
   }
 
 
   render() {
     return (
       <div className='learning-section'>
+        {this.state.answerResponse && !this.state.answerResponse.isCorrect ?
+          <>
+            <h2>Good try, but not quite right :(</h2>
+            <p id='DisplayFeedback'>The correct translation for {this.state.nextWord} is {this.state.answerResponse.answer}</p>
+            <button>Try another word!</button>
+          </>
+          : <></>
+      }
         <h2>Translate the word:</h2>
         <span>{!this.state.nextWord ? '' : this.state.nextWord}</span>
-        <p>Your total score is: {!this.state.totalScore ? 0 : this.state.totalScore}</p>
-        <form>
+        <p className='DisplayScore'>Your total score is: {!this.state.totalScore ? 0 : this.state.totalScore}</p>
+        <form onSubmit={e => {
+          e.preventDefault()
+          this.handleSubmit()}}>
           <label htmlFor='learn-guess-input'>What's the translation for this word?</label>
-          <input type='text' required='required' id='learn-guess-input'></input>
+          <input type='text' 
+                  required='required' 
+                  id='learn-guess-input' 
+                  value={this.state.guess}
+                  onChange={this.handleInput}/>
           <button type='submit'>Submit your answer</button>
         </form>
         <p>You have answered this word correctly 
