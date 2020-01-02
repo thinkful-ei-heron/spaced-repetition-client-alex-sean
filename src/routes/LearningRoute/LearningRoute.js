@@ -64,7 +64,7 @@ class LearningRoute extends Component {
       }
         <h2>Translate the word:</h2>
         <span>{!this.state.nextWord ? '' : this.state.nextWord}</span>
-        <p className='DisplayScore'>Your total score is: {!this.state.totalScore ? 0 : this.state.totalScore}</p>
+        <p id='DisplayScore'>Your total score is: {!this.state.totalScore ? 0 : this.state.totalScore}</p>
         {
           !this.state.submitted ?
           <>
