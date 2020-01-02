@@ -11,13 +11,34 @@ h2, a, #correctAnswers{
     text-align: center;
 }
 
+h4{
+    margin-top: 0
+}
+
 a{
     margin-bottom: 2em;
     text-decoration: none;
 }
 
+ul{
+    columns: 2;
+    text-decoration: none;
+}
+
+li{
+    margin-bottom: 3%;
+    list-style: none;
+    justify-content: left;
+    font-size: .7rem;
+    border-bottom: 1px black dotted;
+    border-top: 1px black dotted;
+}
+
 .practice{
     padding:1rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
 
 #start-practicing {
@@ -27,4 +48,23 @@ a{
 
 #start-practicing:visited {
     color: black;
+}
+
+
+@media only screen and (min-width: 1024px) {
+    li {
+        font-size: 1.5rem;
+    }
+
+    #correctAnswers {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    h3 {
+        font-size: 2rem;
+    }
 }
