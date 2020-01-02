@@ -60,9 +60,8 @@ class DashboardRoute extends Component {
           <h3>Words to practice</h3>
           <ul>{this.getWordsToPractice()} </ul>
           <p id='correctAnswers'>Total correct answers: {this.getTotalCorrect()}</p>
-          <a href='/learn'>Start practicing</a>
+          <a href='/learn' id='start-practicing'>Start practicing</a>
         </div>
-        {/* <button type='button'>Start Practicing!</button> */}
       </section>
     );
   }

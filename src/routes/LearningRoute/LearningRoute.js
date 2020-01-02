@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import LangApiService from '../../services/lang-api-service'
-// import {Textarea, Input, Button, Label, Required} from '../../components/Form/Form'
+import './LearningRoute.css'
 
 
 class LearningRoute extends Component {
@@ -50,28 +50,58 @@ class LearningRoute extends Component {
     }))
   }
 
+  refreshSubmitted = () => {
+    this.setState({
+      submittedAnswer: null
+    })
+  }
+
+  handleNewWord = () => {
+    let newWord = this.state.answerResponse.nextWord
+    let newCorrect = this.state.answerResponse.wordCorrectCount
+    let newIncorrect =this.state.answerResponse.wordIncorrectCount
+    this.setState({
+      nextWord: newWord,
+      wordCorrectCount: newCorrect,
+      wordIncorrectCount: newIncorrect,
+      submitted: false,
+      submittedAnswer: null
+    })
+  }
+
 
   render() {
     return (
       <div className='learning-section'>
-        {this.state.answerResponse && !this.state.answerResponse.isCorrect ?
+        {this.state.submitted && !this.state.answerResponse.isCorrect ?
           <>
-            <h2>Good try, but not quite right :(</h2>
-            <p id='DisplayFeedback'>The correct translation for {this.state.nextWord} is {this.state.answerResponse.answer} and you chose {this.state.submittedAnswer}!</p>
-            <button>Try another word!</button>
+            <h2 id='incorrect-title'>Good try, but not quite right :(</h2>
+            <p className='DisplayFeedback'>The correct translation for {this.state.nextWord} was {this.state.answerResponse.answer} and you chose {this.state.submittedAnswer}!</p>
+            <button className='next-button' onClick={this.handleNewWord}>Try another word!</button>
           </>
           : <></>
       }
-        <h2>Translate the word:</h2>
-        <span>{!this.state.nextWord ? '' : this.state.nextWord}</span>
-        <p id='DisplayScore'>Your total score is: {!this.state.totalScore ? 0 : this.state.totalScore}</p>
+      {this.state.submitted && this.state.answerResponse.isCorrect ?
+          <>
+            <h2>You were correct! :D</h2>
+            <p className='DisplayFeedback'>The correct translation for {this.state.nextWord} was {this.state.answerResponse.answer} and you chose {this.state.submittedAnswer}!</p>
+            <button className='next-button' onClick={this.handleNewWord}>Try another word!</button>
+          </>
+          : <></>
+      }
+        
+       
         {
           !this.state.submitted ?
           <>
-            <form onSubmit={e => {
+            <h2 className='learning-title'>Translate the word:</h2>
+            <span lang='de' id='translate-word'>{!this.state.nextWord ? '' : this.state.nextWord}</span>
+            <form 
+              id='guess-form'
+              onSubmit={e => {
               e.preventDefault()
               this.handleSubmit()}}>
-              <label htmlFor='learn-guess-input'>What's the translation for this word?</label>
+              <label id='guess-label' htmlFor='learn-guess-input'>What's the translation for this word?</label>
               <input type='text' 
                       required='required' 
                       id='learn-guess-input' 
@@ -82,12 +112,13 @@ class LearningRoute extends Component {
           </> :
           <></>
         }
+        <p className='DisplayScore'>Your total score is: {!this.state.totalScore ? 0 : this.state.totalScore}</p>
         
-        <p>You have answered this word correctly 
+        <p id='correct-count'>You have answered this word correctly 
           {!this.state.wordCorrectCount ? ' '+0+' ' : ' '+this.state.wordCorrectCount+' '}
           times.
         </p>
-        <p>You have answered this word incorrectly 
+        <p id='incorrect-count'>You have answered this word incorrectly 
           {!this.state.wordIncorrectCount ? ' '+0+' ' : ' '+this.state.wordIncorrectCount+' '}
           times.
         </p>

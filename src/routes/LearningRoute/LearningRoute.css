@@ -1,0 +1,68 @@
+.learning-section {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.learning-title {
+  margin-bottom: 5%;
+  font-size: 1.8rem;
+}
+
+#translate-word {
+  font-size: 2rem;
+  font-weight: bolder;
+  margin-bottom: 5%;
+}
+
+#guess-label {
+  margin-bottom: 3%;
+}
+
+#learn-guess-input {
+  margin-top: 3%;
+  font-size: 1.3rem;
+}
+
+#correct-count {
+  font-size: .8rem;
+}
+
+#incorrect-count {
+  font-size: .8rem;
+}
+
+#incorrect-title {
+  font-size: 1.2rem;
+}
+
+.DisplayFeedback {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.next-button {
+  width: 60vw;
+  margin: auto;
+}
+
+@media only screen and (min-width: 1024px) {
+  #guess-form {
+    margin: auto;
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+  }
+  #guess-label {
+    font-size: 1.5rem;
+  }
+  #correct-count {
+    font-size: 1.2rem;
+  }
+  #incorrect-count {
+    font-size: 1.2rem;
+  }
+  .DisplayScore {
+    font-size: 1.5rem;
+  }
+}

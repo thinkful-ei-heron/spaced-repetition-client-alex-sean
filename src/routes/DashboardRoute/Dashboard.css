@@ -19,3 +19,12 @@ a{
 .practice{
     padding:1rem;
 }
+
+#start-practicing {
+    font-weight: bolder;
+    font-size: 2rem;
+}
+
+#start-practicing:visited {
+    color: black;
+}
