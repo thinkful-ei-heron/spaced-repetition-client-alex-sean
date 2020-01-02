@@ -75,17 +75,17 @@ class LearningRoute extends Component {
       <div className='learning-section'>
         {this.state.submitted && !this.state.answerResponse.isCorrect ?
           <>
-            <h2 id='incorrect-title'>Good try, but not quite right :(</h2>
-            <p className='DisplayFeedback'>The correct translation for {this.state.nextWord} was {this.state.answerResponse.answer} and you chose {this.state.submittedAnswer}!</p>
-            <button className='next-button' onClick={this.handleNewWord}>Try another word!</button>
+            <h2 aria-live='polite' id='incorrect-title'>Good try, but not quite right :(</h2>
+            <p aria-live='polite' className='DisplayFeedback'>The correct translation for {this.state.nextWord} was {this.state.answerResponse.answer} and you chose {this.state.submittedAnswer}!</p>
+            <button aria-live='polite' className='next-button' onClick={this.handleNewWord}>Try another word!</button>
           </>
           : <></>
       }
       {this.state.submitted && this.state.answerResponse.isCorrect ?
           <>
-            <h2>You were correct! :D</h2>
-            <p className='DisplayFeedback'>The correct translation for {this.state.nextWord} was {this.state.answerResponse.answer} and you chose {this.state.submittedAnswer}!</p>
-            <button className='next-button' onClick={this.handleNewWord}>Try another word!</button>
+            <h2 aria-live='polite'>You were correct! :D</h2>
+            <p aria-live='polite' className='DisplayFeedback'>The correct translation for {this.state.nextWord} was {this.state.answerResponse.answer} and you chose {this.state.submittedAnswer}!</p>
+            <button aria-live='polite' className='next-button' onClick={this.handleNewWord}>Try another word!</button>
           </>
           : <></>
       }

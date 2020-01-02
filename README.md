@@ -1,47 +1,51 @@
 # Spaced Repetition Capstone
+### from
+## Alex Bannow and Sean Cooper
 
-## Setup
 
-To setup the application
+#### Description
+  Imagine fancy, digital flash cards to help you learn a language that come with a built-in algorithm that's
+  proven to help you learn faster! Stop imagining! Look at this app! It's real! 
+  
+  You can currently learn 10 
+  very useful (probably) words in German.
 
-1. Fork and clone the project to your machine
-2. `npm install`. This will also install the application *Cypress.io* for running browser integration tests
+  When you correctly translate a word, it moves
+  further back in your list of words since you
+  clearly know it well, you smarty. But, if for whatever reason you get a word wrong, that word
+  will show up again very soon. Practice makes PERFEKT!
 
-The project expects you have the Spaced repetition API project setup and running on http://localhost:8000.
+  In order to keep track of how well you're doing,
+  a running total for each word documenting the number of times you guess correctly and incorrectly
+  will be shown on the dashboard and the learning page, as well as an overall score of correct answers for the entire language.
 
-Find instructions to setup the API here https://github.com/Thinkful-Ed/spaced-repetition-api.
+##### Registration Page
+![RegistrationPage](./public/img/register.png)
 
-## Running project
+##### Login Page
+![LoginPage](./public/img/login.png)
 
-This is a `create-react-app` project so `npm start` will start the project in development mode with hot reloading by default.
+##### Dashboard Page
+![DashboardPage](./public/img/dashboard.png)
 
-## Running the tests
+##### Learning Page
+![LearningPage](./public/img/learning.png)
 
-This project uses [Cypress IO](https://docs.cypress.io) for integration testing using the Chrome browser.
+##### Correct Answer
+![CorrectAnswer](./public/img/correct.png)
 
-Cypress has the following expectations:
+##### Incorrect Answer
+![IncorrectAnswer](./public/img/incorrect.png)
 
-- You have cypress installed (this is a devDependency of the project)
-- You have your application running at http://localhost:3000.
-  - You can change the address of this expectation in the `./cypress.json` file.
-- Your `./src/config.js` is using http://localhost:8000/api as the `API_ENDPOINT`
 
-To start the tests run the command:
+#### Relevant Links
+Github repo: https://github.com/thinkful-ei-heron/spaced-repetition-client-alex-sean
 
-```bash
-npm run cypress:open
-```
+Live App: https://spaced-repetition-client.rbannal.now.sh/login
 
-On the first run of this command, the cypress application will verify its install. Any other runs after this, the verification will be skipped.
+Server Github repo: https://github.com/thinkful-ei-heron/spaced-repetition-api-alex-sean
 
-The command will open up the Cypress application which reads tests from the `./cypress/integration/` directory. You can then run individual tests by clicking on the file names or run all tests by clicking the "run all tests" button in the cypress GUI.
+Server URL: https://young-falls-43334.herokuapp.com
 
-Tests will assert against your running localhost client application.
 
-You can also start all of the tests in the command line only (not using the GUI) by running the command:
-
-```bash
-npm run cypress:run
-```
-
-This will save video recordings of the test runs in the directory `./cypress/videos/`.
+##### Viel Glück!

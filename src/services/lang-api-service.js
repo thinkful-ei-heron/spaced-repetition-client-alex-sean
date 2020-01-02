@@ -4,7 +4,7 @@ import TokenService from './token-service'
 const LangApiService = {
 
     getLanguageAndWordsProgress(){
-        return fetch(`${config.API_ENDPOINT}/language`, {
+        return fetch(`${config.REACT_APP_API_BASE}/language`, {
             headers: {
                 'authorization':`bearer ${TokenService.getAuthToken()}`,
               },
@@ -20,7 +20,7 @@ const LangApiService = {
               )
     },
     getCurrentWord(){
-      return fetch(`${config.API_ENDPOINT}/language/head`, {
+      return fetch(`${config.REACT_APP_API_BASE}/language/head`, {
         headers: {
           'authorization':`bearer ${TokenService.getAuthToken()}`
         }
@@ -36,7 +36,7 @@ const LangApiService = {
     },
     handleSubmitGuess(guess){
       console.log('submitting guess: '+guess)
-      return fetch(`${config.API_ENDPOINT}/language/guess`, {
+      return fetch(`${config.REACT_APP_API_BASE}/language/guess`, {
         method: 'POST',
         headers: { 'authorization':`bearer ${TokenService.getAuthToken()}`,
                   'content-type': 'application/json' },

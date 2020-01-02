@@ -23,6 +23,7 @@ a{
 ul{
     columns: 2;
     text-decoration: none;
+    padding-left: 0;
 }
 
 li{

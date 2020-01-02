@@ -35,7 +35,7 @@ class DashboardRoute extends Component {
       return (
         array.words.map((words, index) =>{
           return(
-            <li key={index}>
+            <li key={index} lang='de'>
               <h4>{words.original}</h4>
                <p>correct answer count: {words.correct_count}</p>
                 <p>incorrect answer count: {words.incorrect_count}</p>
