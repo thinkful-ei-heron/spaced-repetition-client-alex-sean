@@ -46,7 +46,8 @@ class LearningRoute extends Component {
       submitted: true,
       guess: '',
       totalScore: res.totalScore,
-      submittedAnswer: guess
+      submittedAnswer: guess,
+      
     }))
   }
 
@@ -113,15 +114,18 @@ class LearningRoute extends Component {
           <></>
         }
         <p className='DisplayScore'>Your total score is: {!this.state.totalScore ? 0 : this.state.totalScore}</p>
-        
-        <p id='correct-count'>You have answered this word correctly 
-          {!this.state.wordCorrectCount ? ' '+0+' ' : ' '+this.state.wordCorrectCount+' '}
-          times.
-        </p>
-        <p id='incorrect-count'>You have answered this word incorrectly 
-          {!this.state.wordIncorrectCount ? ' '+0+' ' : ' '+this.state.wordIncorrectCount+' '}
-          times.
-        </p>
+        {!this.state.submitted ? 
+        <div>
+          <p id='correct-count'>You have answered this word correctly 
+            {!this.state.wordCorrectCount ? ' '+0+' ' : ' '+this.state.wordCorrectCount+' '}
+            times.
+          </p>
+          <p id='incorrect-count'>You have answered this word incorrectly 
+            {!this.state.wordIncorrectCount ? ' '+0+' ' : ' '+this.state.wordIncorrectCount+' '}
+            times.
+          </p>
+        </div> : <></>
+      }
       </div>
 
     );
