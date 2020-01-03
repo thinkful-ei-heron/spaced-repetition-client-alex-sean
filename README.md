@@ -45,7 +45,16 @@ Live App: https://spaced-repetition-client.rbannal.now.sh/login
 
 Server Github repo: https://github.com/thinkful-ei-heron/spaced-repetition-api-alex-sean
 
-Server URL: https://young-falls-43334.herokuapp.com
+Server URL: https://spaced-repetition-alex-sean.herokuapp.com/
+
+#### Technology
+HTML
+
+CSS
+
+Javascript
+
+React
 
 
 ##### Viel Glück!
